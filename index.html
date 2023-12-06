@@ -10,7 +10,7 @@
     <script src="https://unpkg.com/@azure/storage-blob"></script>
     <script>
         const blobServiceClient = new Azure.Storage.Blob.BlobServiceClient(process.env.AZURE_STORAGE_CONNECTION_STRING);
-        const containerName = firmwares; // Replace with your container name
+        const containerName = 'firmwares'; // Replace with your container name
 
         async function listFiles() {
             const containerClient = blobServiceClient.getContainerClient(containerName);
