@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        input[type=text],input[type=password], select {
+          width: 50%;
+          padding: 12px 20px;
+          margin: 8px 0;
+          display: inline-block;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+        }
+        
+        button {
+          width: 20%;
+          background-color: #4CAF50;
+          color: white;
+          padding: 14px 20px;
+          margin: 8px 10px;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+        }
+        
+        button:hover {
+          background-color: #45a049;
+        }
+        
+        .main {
+            height: 100%;
+            width: 100%;
+            position: fixed;
+            background-color: #f2f2f2;
+            border-radius: 5px;
+            z-index: 1;
+            top: 0;
+            overflow-x: hidden;
+            padding: 20px;
+            /* padding-bottom: 40px; */
+            margin: 25px;
+        }
+
+        .log-box{
+            border: none;
+            padding: 5px;
+            width: 80%;
+            height: 90%;
+            overflow: scroll;
+            background-color: #cac6c6;
+        }
+        
+        #container {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+      }
+
+    </style>
+<body>
+    <div class="main">
+        <h4> Please make sure you have your the account CORS policy(<a href="https://docs.microsoft.com/en-us/azure/storage/blobs/quickstart-blobs-javascript-browser#create-a-cors-rule">details</a>) allows all hosts. 
+            <br/><br/>
+            Ensure that SAS URI has required permissions(<a href="https://docs.microsoft.com/en-us/azure/storage/blobs/quickstart-blobs-javascript-browser#create-a-shared-access-signature"> click here</a> to know more)
+        </h4>
+        <!-- <div style="display:inline-block"> -->
+            <input type="password" id="uri-sas" placeholder="Enter the SAS URL" />
+            <button id="submit-sas">Fetch Blob Containers</button>
+        <!-- </div> -->
+            <br/><br/>
+
+            <p><b>Choose Container:</b></p>
+            <select id="container-list"></select>
+            <br/><br/>
+            
+            <button id="list-button">List files</button>
+            <button id="select-button">Upload files</button>
+            <input type="file" id="file-input" multiple style="display: none;" />
+            
+            <p><b>Files:</b></p>
+            <select id="file-list"></select>
+            <button id="download-blob">Download File</button>
+            <br/><br/><br/>
+            <div class="log-box">
+                <p><b>Logs:</b></p>
+                <p id="status"></p>
+            </div>
+    </div>
+
+</body>
+
+<script src="./build/index.js"></script>
+
+</html>
